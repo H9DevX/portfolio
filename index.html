@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hamza | Web Developer & Software Engineer</title>
+    
+    <!-- Meta SEO -->
+    <meta name="description" content="Portfolio of Hamza - Web Developer & Software Engineer crafting high-performance, responsive web interfaces and software solutions.">
+    <meta name="keywords" content="Hamza, Web Developer, Software Engineer, Frontend Developer, JavaScript, Python, C++, HTML5, CSS3, Portfolio">
+    <meta name="author" content="Hamza">
+    
+    <!-- Browser Security & Defensive Policies -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https:; connect-src 'self' https://formspree.io;">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Hamza | Web Developer & Software Engineer">
+    <meta property="og:description" content="Explore Hamza's portfolio featuring modern web applications, clean frontend architecture, and software projects.">
+    <meta property="og:type" content="website">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Subtle Background Ambience -->
+    <div class="ambient-glow glow-top"></div>
+    <div class="ambient-glow glow-bottom"></div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast" role="alert" aria-live="polite">
+        <i class="fa-solid fa-circle-check"></i>
+        <span id="toast-message">Action successful!</span>
+    </div>
+
+    <!-- Navigation Bar -->
+    <header id="header">
+        <nav class="nav-container">
+            <a href="#home" class="logo" aria-label="Hamza Portfolio Home">
+                <span class="logo-mark">H</span>
+                <span class="logo-name">Hamza</span>
+                <span class="logo-dot">.</span>
+            </a>
+
+            <!-- Desktop Nav Links -->
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#services" class="nav-link">Services</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+
+            <!-- Header Actions -->
+            <div class="nav-actions">
+                <a href="#contact" class="btn btn-sm btn-outline-glow nav-cta">
+                    <span>Get in Touch</span>
+                </a>
+
+                <button class="hamburger-btn" id="hamburger-btn" aria-label="Toggle navigation menu" aria-expanded="false">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Mobile Navigation Drawer -->
+    <div class="mobile-drawer" id="mobile-drawer">
+        <div class="drawer-header">
+            <span class="logo-name">Hamza<span class="logo-dot">.</span></span>
+            <button class="close-drawer-btn" id="close-drawer-btn" aria-label="Close menu">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        <ul class="mobile-nav-links">
+            <li><a href="#home" class="mobile-link"><i class="fa-solid fa-house"></i> Home</a></li>
+            <li><a href="#about" class="mobile-link"><i class="fa-solid fa-user"></i> About</a></li>
+            <li><a href="#skills" class="mobile-link"><i class="fa-solid fa-code"></i> Skills</a></li>
+            <li><a href="#projects" class="mobile-link"><i class="fa-solid fa-laptop-code"></i> Projects</a></li>
+            <li><a href="#services" class="mobile-link"><i class="fa-solid fa-bolt"></i> Services</a></li>
+            <li><a href="#contact" class="mobile-link"><i class="fa-solid fa-envelope"></i> Contact</a></li>
+        </ul>
+        <div class="mobile-drawer-footer">
+            <a href="#contact" class="btn btn-primary btn-full mobile-cta-btn">
+                <span>Start a Conversation</span>
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+            <div class="mobile-socials">
+                <a href="https://github.com/H9DevX" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                <a href="mailto:hamzashah0411@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+            </div>
+        </div>
+    </div>
+    <div class="drawer-backdrop" id="drawer-backdrop"></div>
+
+    <main>
+        <!-- ===================== HERO SECTION ===================== -->
+        <section id="home" class="hero-section">
+            <div class="container hero-container">
+                
+                <div class="hero-content reveal-on-scroll">
+                    <!-- Status Badge -->
+                    <div class="status-badge">
+                        <span class="pulse-dot"></span>
+                        <span>Available for freelance projects & full-time roles</span>
+                    </div>
+
+                    <h1 class="hero-title">
+                        Hi, I'm Hamza.<br>
+                        <span class="hero-tagline">I build <span class="typing-text" id="typing-text"></span><span class="typing-cursor">|</span></span>
+                    </h1>
+
+                    <p class="hero-description">
+                        A web developer & software engineer focused on crafting clean, accessible, and high-performance digital experiences. Specializing in modern frontend development with a strong foundation in algorithmic logic.
+                    </p>
+
+                    <!-- Hero CTA Buttons -->
+                    <div class="hero-cta-group">
+                        <a href="#projects" class="btn btn-primary">
+                            <span>View Projects</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                        <a href="https://github.com/H9DevX" target="_blank" rel="noopener noreferrer" class="btn btn-glass">
+                            <i class="fa-brands fa-github"></i>
+                            <span>GitHub Profile</span>
+                        </a>
+                        <button class="btn btn-outline copy-email-btn" data-email="hamzashah0411@gmail.com" title="Copy email address" aria-label="Copy Email">
+                            <i class="fa-regular fa-copy"></i>
+                            <span>Copy Email</span>
+                        </button>
+                    </div>
+
+                    <!-- Meta Strip -->
+                    <div class="hero-meta-strip">
+                        <div class="meta-item">
+                            <span class="meta-label">Focus</span>
+                            <span class="meta-val">Frontend & Web Systems</span>
+                        </div>
+                        <div class="meta-divider"></div>
+                        <div class="meta-item">
+                            <span class="meta-label">Location</span>
+                            <span class="meta-val">Remote / Worldwide</span>
+                        </div>
+                        <div class="meta-divider"></div>
+                        <div class="meta-item">
+                            <span class="meta-label">GitHub</span>
+                            <a href="https://github.com/H9DevX" target="_blank" rel="noopener noreferrer" class="meta-link">@H9DevX <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Clean, Sleek Profile Card -->
+                <div class="hero-visual reveal-on-scroll">
+                    <div class="profile-card">
+                        <div class="profile-card-frame">
+                            <img src="assets/images/profile.jpg"
+                                 alt="Hamza - Web Developer & Software Engineer"
+                                 class="profile-img"
+                                 onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80'">
+                            <div class="profile-overlay"></div>
+                        </div>
+                        <div class="profile-caption">
+                            <div class="profile-caption-info">
+                                <span class="caption-name">Hamza</span>
+                                <span class="caption-title">Frontend Developer</span>
+                            </div>
+                            <span class="caption-pill">Active</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Scroll Down Indicator -->
+            <a href="#about" class="scroll-down-indicator" aria-label="Scroll to About section">
+                <span>Explore</span>
+                <i class="fa-solid fa-chevron-down"></i>
+            </a>
+        </section>
+
+
+        <!-- ===================== ABOUT SECTION ===================== -->
+        <section id="about" class="about-section section-padding">
+            <div class="container">
+                <div class="section-header reveal-on-scroll">
+                    <span class="section-eyebrow">About Me</span>
+                    <h2 class="section-title">Committed to craft, clarity, and performance.</h2>
+                    <p class="section-subtitle">A straightforward approach to building software that works reliably and looks refined.</p>
+                </div>
+
+                <div class="about-grid">
+                    <div class="about-narrative-card card-elevated reveal-on-scroll">
+                        <h3 class="about-card-title">Building for real users and real results</h3>
+                        <p class="about-text">
+                            I am a software engineering practitioner and frontend developer driven by curiosity and craft. I treat every project with deliberate attention to detail — from semantic document structure and responsive layouts to performance optimization and clean code architecture.
+                        </p>
+                        <p class="about-text">
+                            My primary focus is <strong>modern frontend engineering</strong> using HTML5, CSS3, and modern JavaScript (ES6+). Along with interface development, I regularly write <strong>Python</strong> and <strong>C++</strong> to solve complex algorithmic logic, automate workflows, and build solid back-end integrations.
+                        </p>
+
+                        <div class="about-pillars">
+                            <div class="pillar">
+                                <i class="fa-solid fa-check"></i>
+                                <span>Fast, responsive interfaces tailored for every viewport</span>
+                            </div>
+                            <div class="pillar">
+                                <i class="fa-solid fa-check"></i>
+                                <span>Clean, semantic code adhering to international web standards</span>
+                            </div>
+                            <div class="pillar">
+                                <i class="fa-solid fa-check"></i>
+                                <span>Clear communication, structured workflows, and dependable delivery</span>
+                            </div>
+                            <div class="pillar">
+                                <i class="fa-solid fa-check"></i>
+                                <span>Continuous learning and modern toolchain adoption</span>
+                            </div>
+                        </div>
+
+                        <div class="about-actions">
+                            <a href="#contact" class="btn btn-primary">
+                                <span>Let's Connect</span>
+                                <i class="fa-solid fa-paper-plane"></i>
+                            </a>
+                            <a href="https://github.com/H9DevX" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+                                <i class="fa-brands fa-github"></i>
+                                <span>Review Code on GitHub</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Credible Highlights Grid -->
+                    <div class="about-highlights-grid">
+                        <div class="highlight-card card-elevated reveal-on-scroll">
+                            <div class="highlight-icon"><i class="fa-solid fa-layer-group"></i></div>
+                            <h4 class="highlight-title">Modern Frontend</h4>
+                            <p class="highlight-desc">Semantic HTML5, CSS modern grid/flexbox, ES6+ JavaScript, responsive ergonomics, and component-based structure.</p>
+                        </div>
+
+                        <div class="highlight-card card-elevated reveal-on-scroll">
+                            <div class="highlight-icon"><i class="fa-solid fa-terminal"></i></div>
+                            <h4 class="highlight-title">Logic & Systems</h4>
+                            <p class="highlight-desc">Algorithmic thinking in C++ and Python with emphasis on data structures, time complexity, and modular scripting.</p>
+                        </div>
+
+                        <div class="highlight-card card-elevated reveal-on-scroll">
+                            <div class="highlight-icon"><i class="fa-solid fa-mobile-screen"></i></div>
+                            <h4 class="highlight-title">Responsive Design</h4>
+                            <p class="highlight-desc">Mobile-first user experience tested across varied devices, screen aspect ratios, and modern browsers.</p>
+                        </div>
+
+                        <div class="highlight-card card-elevated reveal-on-scroll">
+                            <div class="highlight-icon"><i class="fa-brands fa-git-alt"></i></div>
+                            <h4 class="highlight-title">Tooling & Git</h4>
+                            <p class="highlight-desc">Git version control, command line fluency, GitHub repositories, and structured collaborative workflows.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ===================== SKILLS & STACK ===================== -->
+        <section id="skills" class="skills-section section-padding">
+            <div class="container">
+                <div class="section-header reveal-on-scroll">
+                    <span class="section-eyebrow">Capabilities</span>
+                    <h2 class="section-title">Technical Stack & Tools</h2>
+                    <p class="section-subtitle">Technologies and developer tools I use to build robust digital products.</p>
+                </div>
+
+                <div class="capabilities-matrix">
+                    
+                    <!-- Group 1: Frontend -->
+                    <div class="capability-group card-elevated reveal-on-scroll">
+                        <div class="group-header">
+                            <div class="group-icon"><i class="fa-solid fa-code"></i></div>
+                            <div>
+                                <h3 class="group-title">Frontend Engineering</h3>
+                                <p class="group-desc">Building responsive, accessible web interfaces</p>
+                            </div>
+                        </div>
+                        <div class="chips-grid">
+                            <div class="tech-chip">
+                                <i class="fa-brands fa-html5 color-html"></i>
+                                <span class="chip-name">HTML5</span>
+                                <span class="chip-badge">Semantic</span>
+                            </div>
+                            <div class="tech-chip">
+                                <i class="fa-brands fa-css3-alt color-css"></i>
+                                <span class="chip-name">CSS3 / Grid / Flex</span>
+                                <span class="chip-badge">Layouts</span>
+                            </div>
+                            <div class="tech-chip">
+                                <i class="fa-brands fa-js color-js"></i>
+                                <span class="chip-name">JavaScript (ES6+)</span>
+                                <span class="chip-badge">Core</span>
+                            </div>
+                            <div class="tech-chip">
+                                <i class="fa-solid fa-mobile-screen color-cyan"></i>
+                                <span class="chip-name">Responsive Design</span>
+                                <span class="chip-badge">Mobile-first</span>
+                            </div>
+                            <div class="tech-chip">
+                                <i class="fa-solid fa-wand-magic-sparkles color-emerald"></i>
+                                <span class="chip-name">Micro-interactions</span>
+                                <span class="chip-badge">UX Polish</span>
+                            </div>
+                            <div class="tech-chip">
+                                <i class="fa-solid fa-gauge-high color-amber"></i>
+                                <span class="chip-name">Web Performance</span>
+                                <span class="chip-badge">Optimization</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Group 2: Languages & Logic -->
+                    <div class="capability-group card-elevated reveal-on-scroll">
+                        <div class="group-header">
+                            <div class="group-icon"><i class="fa-solid fa-terminal"></i></div>
+                            <div>
+                                <h3 class="group-title">Languages & Systems</h3>
+                                <p class="group-desc">Algorithmic foundations and software logic</p>
+                            </div>
+                        </div>
+                        <div class="chips-grid">
+                            <div class="tech-chip">
+                                <i class="fa-brands fa-python color-python"></i>
+                                <span class="chip-name">Python</span>
+                                <span class="chip-badge">Scripting</span>
+                            </div>
+                            <div class="tech-chip">
+                                <i class="fa-solid fa-file-code color-cpp"></i>
+                                <span class="chip-name">C++</span>
+                                <span class="chip-badge">OOP & Logic</span>
+                            </div>
+                            <div class="tech-chip">
+                                <i class="fa-solid fa-network-wired color-cyan"></i>
+                                <span class="chip-name">REST APIs</span>
+                                <span class="chip-badge">Async / JSON</span>
+                            </div>
+                            <div class="tech-chip">
+                                <i class="fa-solid fa-diagram-project color-purple"></i>
+                                <span class="chip-name">Data Structures</span>
+                                <span class="chip-badge">Algorithms</span>
+                            </div>
+                            <div class="tech-chip">
+                                <i class="fa-solid fa-gears color-emerald"></i>
+                                <span class="chip-name">Automation Scripts</span>
+                                <span class="chip-badge">Workflow</span>
+                            </div>
+                            <div class="tech-chip">
+                                <i class="fa-solid fa-shield-halved color-amber"></i>
+                                <span class="chip-name">Clean Code Principles</span>
+                                <span class="chip-badge">Maintainability</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Group 3: Tooling & Workflow -->
+                    <div class="capability-group card-elevated reveal-on-scroll">
+                        <div class="group-header">
+                            <div class="group-icon"><i class="fa-solid fa-toolbox"></i></div>
+                            <div>
+                                <h3 class="group-title">Tooling & Workflow</h3>
+                                <p class="group-desc">Modern environment & version control</p>
+                            </div>
+                        </div>
+                        <div class="chips-grid">
+                            <div class="tech-chip">
+                                <i class="fa-brands fa-git-alt color-html"></i>
+                                <span class="chip-name">Git Version Control</span>
+                                <span class="chip-badge">VCS</span>
+                            </div>
+                            <div class="tech-chip">
+                                <i class="fa-brands fa-github color-white"></i>
+                                <span class="chip-name">GitHub</span>
+                                <span class="chip-badge">Repositories</span>
+                            </div>
+                            <div class="tech-chip">
+                                <i class="fa-solid fa-terminal color-emerald"></i>
+                                <span class="chip-name">Command Line (Bash)</span>
+                                <span class="chip-badge">CLI</span>
+                            </div>
+                            <div class="tech-chip">
+                                <i class="fa-solid fa-laptop-code color-cyan"></i>
+                                <span class="chip-name">VS Code</span>
+                                <span class="chip-badge">IDE</span>
+                            </div>
+                            <div class="tech-chip">
+                                <i class="fa-solid fa-browser color-purple"></i>
+                                <span class="chip-name">Chrome DevTools</span>
+                                <span class="chip-badge">Debugging</span>
+                            </div>
+                            <div class="tech-chip">
+                                <i class="fa-solid fa-compass-drafting color-amber"></i>
+                                <span class="chip-name">Wireframing & UI Flow</span>
+                                <span class="chip-badge">Design</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ===================== PROJECTS SECTION ===================== -->
+        <section id="projects" class="projects-section section-padding">
+            <div class="container">
+                <div class="section-header reveal-on-scroll">
+                    <span class="section-eyebrow">Work</span>
+                    <h2 class="section-title">Selected Projects & Code</h2>
+                    <p class="section-subtitle">Real-world applications, frontend interfaces, and software tooling.</p>
+                </div>
+
+                <!-- Category Filters (Rendered dynamically when projects are present) -->
+                <div class="project-filters reveal-on-scroll" id="project-filters" role="tablist" style="display: none;"></div>
+
+                <!-- Dynamic Projects Container (Renders projects or tasteful empty state) -->
+                <div id="projects-container" class="reveal-on-scroll"></div>
+
+
+                <!-- GitHub Banner Callout -->
+                <div class="github-banner card-elevated reveal-on-scroll">
+                    <div class="banner-left">
+                        <div class="banner-icon"><i class="fa-brands fa-github"></i></div>
+                        <div>
+                            <h3 class="banner-title">Explore more repositories on GitHub</h3>
+                            <p class="banner-desc">Review commit logs, code experiments, and open-source contributions.</p>
+                        </div>
+                    </div>
+                    <a href="https://github.com/H9DevX" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                        <span>Visit @H9DevX</span>
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- ===================== SERVICES SECTION ===================== -->
+        <section id="services" class="services-section section-padding">
+            <div class="container">
+                <div class="section-header reveal-on-scroll">
+                    <span class="section-eyebrow">Services</span>
+                    <h2 class="section-title">How I Can Help Your Team</h2>
+                    <p class="section-subtitle">Practical engineering capabilities tailored for clients, founders, and development teams.</p>
+                </div>
+
+                <div class="services-grid">
+                    <div class="service-card card-elevated reveal-on-scroll">
+                        <div class="service-icon"><i class="fa-solid fa-laptop-code"></i></div>
+                        <h3 class="service-title">Full Frontend Web Development</h3>
+                        <p class="service-desc">
+                            Building clean, maintainable web applications from Figma or raw specifications using semantic HTML5, modern CSS architectures, and vanilla or framework JavaScript.
+                        </p>
+                        <ul class="service-list">
+                            <li><i class="fa-solid fa-check"></i> Clean, modular codebases</li>
+                            <li><i class="fa-solid fa-check"></i> Fast loading times & low latency</li>
+                            <li><i class="fa-solid fa-check"></i> Cross-browser and accessible standards</li>
+                        </ul>
+                    </div>
+
+                    <div class="service-card card-elevated reveal-on-scroll">
+                        <div class="service-icon"><i class="fa-solid fa-mobile-screen-button"></i></div>
+                        <h3 class="service-title">Responsive UI & Layout Engineering</h3>
+                        <p class="service-desc">
+                            Ensuring websites adapt seamlessly to every screen size — from compact phones to high-resolution ultrawide desktop monitors, without visual breakage.
+                        </p>
+                        <ul class="service-list">
+                            <li><i class="fa-solid fa-check"></i> Mobile-first architecture</li>
+                            <li><i class="fa-solid fa-check"></i> Fluid typography & spacing scale</li>
+                            <li><i class="fa-solid fa-check"></i> Ergonomic touch targets</li>
+                        </ul>
+                    </div>
+
+                    <div class="service-card card-elevated reveal-on-scroll">
+                        <div class="service-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+                        <h3 class="service-title">Interactive Micro-animations & UX</h3>
+                        <p class="service-desc">
+                            Adding tasteful, 60fps micro-animations that make software feel responsive, tangible, and satisfying to use without lagging or distracting.
+                        </p>
+                        <ul class="service-list">
+                            <li><i class="fa-solid fa-check"></i> GPU-accelerated CSS transitions</li>
+                            <li><i class="fa-solid fa-check"></i> Scroll-triggered visual reveals</li>
+                            <li><i class="fa-solid fa-check"></i> Intuitive state changes & feedback</li>
+                        </ul>
+                    </div>
+
+                    <div class="service-card card-elevated reveal-on-scroll">
+                        <div class="service-icon"><i class="fa-solid fa-gears"></i></div>
+                        <h3 class="service-title">Automation, Scripts & Problem Solving</h3>
+                        <p class="service-desc">
+                            Developing Python scripts and C++ routines to automate repetitive tasks, parse unstructured datasets, and solve logical programming challenges.
+                        </p>
+                        <ul class="service-list">
+                            <li><i class="fa-solid fa-check"></i> Python web data parsers</li>
+                            <li><i class="fa-solid fa-check"></i> Algorithmic efficiency</li>
+                            <li><i class="fa-solid fa-check"></i> Well-documented execution</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ===================== CONTACT SECTION ===================== -->
+        <section id="contact" class="contact-section section-padding">
+            <div class="container">
+                <div class="section-header reveal-on-scroll">
+                    <span class="section-eyebrow">Contact</span>
+                    <h2 class="section-title">Let's discuss your project</h2>
+                    <p class="section-subtitle">Whether you have a contract in mind, need a frontend developer, or want to say hello — send a note.</p>
+                </div>
+
+                <div class="contact-grid">
+                    
+                    <!-- Contact Info Card -->
+                    <div class="contact-info-card card-elevated reveal-on-scroll">
+                        <h3 class="contact-card-title">Direct Contact</h3>
+                        <p class="contact-card-desc">
+                            I respond to inquiries promptly within 24 hours. Feel free to copy my direct email or connect through GitHub.
+                        </p>
+
+                        <div class="contact-methods">
+                            <div class="contact-method-item">
+                                <div class="method-icon"><i class="fa-solid fa-envelope"></i></div>
+                                <div class="method-content">
+                                    <span class="method-label">Direct Email</span>
+                                    <a href="mailto:hamzashah0411@gmail.com" class="method-value">hamzashah0411@gmail.com</a>
+                                </div>
+                                <button class="copy-btn copy-email-btn" data-email="hamzashah0411@gmail.com" title="Copy Email" aria-label="Copy Email">
+                                    <i class="fa-regular fa-copy"></i>
+                                </button>
+                            </div>
+
+                            <div class="contact-method-item">
+                                <div class="method-icon"><i class="fa-brands fa-github"></i></div>
+                                <div class="method-content">
+                                    <span class="method-label">GitHub</span>
+                                    <a href="https://github.com/H9DevX" target="_blank" rel="noopener noreferrer" class="method-value">github.com/H9DevX</a>
+                                </div>
+                                <a href="https://github.com/H9DevX" target="_blank" rel="noopener noreferrer" class="copy-btn" title="Open GitHub profile">
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                </a>
+                            </div>
+
+                            <div class="contact-method-item">
+                                <div class="method-icon"><i class="fa-solid fa-location-dot"></i></div>
+                                <div class="method-content">
+                                    <span class="method-label">Availability</span>
+                                    <span class="method-value">Available for Remote Work Globally</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="availability-card">
+                            <div class="pulse-dot"></div>
+                            <div>
+                                <strong>Open to New Opportunities</strong>
+                                <p>Available for freelance contracts, full-time remote roles, and technical collaborations.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Form -->
+                    <div class="contact-form-card card-elevated reveal-on-scroll">
+                        <form id="contact-form" class="contact-form" novalidate>
+                            <h3 class="contact-card-title">Send a Message</h3>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="name">Your Name <span class="required">*</span></label>
+                                    <input type="text" id="name" name="name" placeholder="Alex Morgan" required autocomplete="name">
+                                    <span class="field-error" id="name-error"></span>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="email">Email Address <span class="required">*</span></label>
+                                    <input type="email" id="email" name="email" placeholder="alex@company.com" required autocomplete="email">
+                                    <span class="field-error" id="email-error"></span>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="subject">Subject <span class="required">*</span></label>
+                                <input type="text" id="subject" name="subject" placeholder="Project Inquiry / Job Opportunity" required>
+                                <span class="field-error" id="subject-error"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="message">Message <span class="required">*</span></label>
+                                <textarea id="message" name="message" rows="5" placeholder="Share a brief overview of your project, timeline, or requirements..." required></textarea>
+                                <span class="field-error" id="message-error"></span>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary btn-full submit-btn" id="submit-btn">
+                                <span class="btn-text">Send Message</span>
+                                <i class="fa-solid fa-paper-plane btn-icon"></i>
+                            </button>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-top">
+                <a href="#home" class="logo">
+                    <span class="logo-mark">H</span>
+                    <span class="logo-name">Hamza</span>
+                    <span class="logo-dot">.</span>
+                </a>
+                <p class="footer-tagline">Building clean, accessible, and high-performance digital experiences.</p>
+                <div class="footer-socials">
+                    <a href="https://github.com/H9DevX" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                    <a href="mailto:hamzashah0411@gmail.com" class="social-link" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-divider"></div>
+
+            <div class="footer-bottom">
+                <p class="copyright">
+                    &copy; 2026 Hamza. Designed &amp; developed with clean web standards.
+                </p>
+                <div class="footer-nav">
+                    <a href="#home">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#skills">Skills</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#services">Services</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="back-to-top" aria-label="Scroll to top">
+        <i class="fa-solid fa-chevron-up"></i>
+    </button>
+
+    <!-- JavaScript Files -->
+    <script src="projects-data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
